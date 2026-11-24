@@ -211,7 +211,7 @@ $('csend').onclick=async()=>{
   const text=$('ctext').value.trim();if(!text||!db)return;
   try{await db.collection('comments').doc('c'+Date.now()+Math.random().toString(36).slice(2,6)).set({text,name:$('nick').value.trim()||'익명',ts:Date.now(),topic:T[cur]});$('ctext').value=''}catch(e){alert('의견을 등록할 수 없어요. (로그인이 필요할 수 있어요)')}
 };
-const SUPABASE_URL='https://jtfcaxuxfniccklapana.supabase.co/rest/v1/';          // 예: https://abcd1234.supabase.co
+const SUPABASE_URL='https://jtfcaxuxfniccklapana.supabase.co';          // 예: https://abcd1234.supabase.co
 const SUPABASE_KEY='sb_publishable_NJzkqxejtZaM8ONv3HuWeA_hK2aMfUX';      // sb_publishable_... (secret 키 금지)
 function makeDb(sb,uid){
   const coll=name=>({
